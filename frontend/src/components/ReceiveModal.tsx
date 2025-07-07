@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CloseIcon } from "./Icons";
+import { ShinyText } from "./ShinyText";
 
 interface ReceiveModalProps {
   isOpen: boolean;
@@ -67,8 +68,11 @@ export const ReceiveModal: React.FC<ReceiveModalProps> = ({
           </button>
 
           <div className="text-center">
-            <h1 className="text-gray-800 text-2xl font-semibold mb-2">
-              Receive File
+            <h1 className="text-2xl font-semibold mb-2">
+              <ShinyText
+                text="Receive File"
+                className="text-2xl font-semibold"
+              />
             </h1>
             <p className="text-gray-500 text-sm">
               Enter the 6-digit share code to receive the file

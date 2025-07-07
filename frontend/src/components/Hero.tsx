@@ -87,16 +87,16 @@ export const Hero: React.FC<HeroProps> = ({
         {/* CTA Buttons */}
         <div className="mt-8 md:mt-12 flex gap-4">
           <button
-            onClick={onUploadClick}
+            onClick={onReceiveClick}
             className="bg-gradient-to-r from-primary-blue to-primary-blueLight hover:from-primary-blueDark hover:to-primary-blue text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg shadow-primary-blue/30 hover:shadow-xl hover:shadow-primary-blue/40 transform hover:-translate-y-1 backdrop-blur-sm border border-white/20"
           >
-            Upload Your Files
+            Receive Files
           </button>
           <button
-            onClick={onReceiveClick}
-            className="bg-gradient-to-r from-secondary-purple to-secondary-purpleLight hover:from-secondary-purpleDark hover:to-secondary-purple text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg shadow-secondary-purple/30 hover:shadow-xl hover:shadow-secondary-purple/40 transform hover:-translate-y-1 backdrop-blur-sm border border-white/20"
+            onClick={onUploadClick}
+            className="text-primary-blue hover:text-primary-blueLight font-semibold px-6 py-4 transition-all duration-300 transform hover:-translate-y-0.5"
           >
-            Receive File
+            Upload Files
           </button>
         </div>
       </div>

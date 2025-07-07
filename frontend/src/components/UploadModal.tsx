@@ -4,6 +4,7 @@ import { DropZone } from "./DropZone";
 import { FileList } from "./FileList";
 import { ShareModal } from "./ShareModal";
 import { type FileData } from "./FileItem";
+import { ShinyText } from "./ShinyText";
 
 interface UploadModalProps {
   isOpen: boolean;
@@ -214,8 +215,11 @@ export const UploadModal: React.FC<UploadModalProps> = ({
           </button>
 
           <div className="text-center">
-            <h1 className="text-gray-800 text-3xl font-semibold mb-2">
-              Upload File
+            <h1 className="text-3xl font-semibold mb-2">
+              <ShinyText
+                text="Upload File"
+                className="text-3xl font-semibold"
+              />
             </h1>
             <p className="text-gray-500 text-base">
               Select or drag and drop a single file (max 100MB) to get started

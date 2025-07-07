@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { CloseIcon, LoadingSpinner, CheckIcon } from "./Icons";
 import { type FileData } from "./FileItem";
+import { ShinyText } from "./ShinyText";
 
 interface ShareModalProps {
   isOpen: boolean;
@@ -174,8 +175,8 @@ export const ShareModal: React.FC<ShareModalProps> = ({
           </button>
 
           <div className="text-center">
-            <h1 className="text-gray-800 text-2xl font-semibold mb-2">
-              Share File
+            <h1 className="text-2xl font-semibold mb-2">
+              <ShinyText text="Share File" className="text-2xl font-semibold" />
             </h1>
             <p className="text-gray-500 text-sm">{file.name}</p>
           </div>

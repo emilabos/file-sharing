@@ -69,6 +69,7 @@ export default {
         pulse: "pulse 2s ease-in-out infinite",
         "letter-glow": "letterGlow 2s ease-in-out infinite alternate",
         "tooltip-bounce": "tooltipBounce 0.5s ease-out",
+        shine: "shine 5s linear infinite",
       },
       keyframes: {
         fadeIn: {
@@ -99,6 +100,10 @@ export default {
             opacity: "0",
           },
           "100%": { transform: "translateX(-50%) translateY(0)", opacity: "1" },
+        },
+        shine: {
+          "0%": { backgroundPosition: "100%" },
+          "100%": { backgroundPosition: "-100%" },
         },
       },
     },
