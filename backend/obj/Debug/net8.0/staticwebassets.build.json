@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fwx90pqA04Ai+8nhc+cTquJ04Rxu+nycPtmpNVtUa74=",
+  "Hash": "fVH9AJxmd8SFk5moVPExJdPcmRA8zU7h7cEl5zvsR7s=",
   "Source": "backend",
   "BasePath": "_content/backend",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "1icok79z7o",
-      "Integrity": "SbVt75s5Fvhd5m4LTdNMaI+k4LSqmeAmHhsCzJ3r138=",
+      "Fingerprint": "qrrrnt5j0v",
+      "Integrity": "qh9kZIQCfn3mlXqHKLkviJ4FB6m4JzOOmadJQSF7A1k=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/index.html"
@@ -136,8 +136,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "d85lzak3qd",
-      "Integrity": "Q4fPOpLosBvmwOOlPFfYxbKk4s5Amij1tD2sCnsWTmU=",
+      "Fingerprint": "fvnorb7e2r",
+      "Integrity": "24UpQeJQHucZpWJELhfefrlFWoB9IU0HL4GULlQQjhQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/static/index-CQ65wKLO.js"
@@ -330,51 +330,6 @@
       ]
     },
     {
-      "Route": "index.1icok79z7o.html",
-      "AssetFile": "/Users/emilabos/Github/file-sharing/backend/wwwroot/index.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "508"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"SbVt75s5Fvhd5m4LTdNMaI+k4LSqmeAmHhsCzJ3r138=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 08 Jul 2025 10:13:51 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "1icok79z7o"
-        },
-        {
-          "Name": "label",
-          "Value": "index.html"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-SbVt75s5Fvhd5m4LTdNMaI+k4LSqmeAmHhsCzJ3r138="
-        }
-      ]
-    },
-    {
       "Route": "index.html",
       "AssetFile": "/Users/emilabos/Github/file-sharing/backend/wwwroot/index.html",
       "Selectors": [],
@@ -385,7 +340,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "508"
+          "Value": "521"
         },
         {
           "Name": "Content-Type",
@@ -393,11 +348,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"SbVt75s5Fvhd5m4LTdNMaI+k4LSqmeAmHhsCzJ3r138=\""
+          "Value": "\"qh9kZIQCfn3mlXqHKLkviJ4FB6m4JzOOmadJQSF7A1k=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 08 Jul 2025 10:13:51 GMT"
+          "Value": "Tue, 08 Jul 2025 16:22:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -407,7 +362,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-SbVt75s5Fvhd5m4LTdNMaI+k4LSqmeAmHhsCzJ3r138="
+          "Value": "sha256-qh9kZIQCfn3mlXqHKLkviJ4FB6m4JzOOmadJQSF7A1k="
+        }
+      ]
+    },
+    {
+      "Route": "index.qrrrnt5j0v.html",
+      "AssetFile": "/Users/emilabos/Github/file-sharing/backend/wwwroot/index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "521"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qh9kZIQCfn3mlXqHKLkviJ4FB6m4JzOOmadJQSF7A1k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Jul 2025 16:22:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qrrrnt5j0v"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qh9kZIQCfn3mlXqHKLkviJ4FB6m4JzOOmadJQSF7A1k="
         }
       ]
     },
@@ -576,7 +576,7 @@
       ]
     },
     {
-      "Route": "static/index-CQ65wKLO.d85lzak3qd.js",
+      "Route": "static/index-CQ65wKLO.fvnorb7e2r.js",
       "AssetFile": "/Users/emilabos/Github/file-sharing/backend/wwwroot/static/index-CQ65wKLO.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -586,7 +586,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "215489"
+          "Value": "387257"
         },
         {
           "Name": "Content-Type",
@@ -594,11 +594,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Q4fPOpLosBvmwOOlPFfYxbKk4s5Amij1tD2sCnsWTmU=\""
+          "Value": "\"24UpQeJQHucZpWJELhfefrlFWoB9IU0HL4GULlQQjhQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 08 Jul 2025 10:13:51 GMT"
+          "Value": "Tue, 08 Jul 2025 16:15:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -608,7 +608,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "d85lzak3qd"
+          "Value": "fvnorb7e2r"
         },
         {
           "Name": "label",
@@ -616,7 +616,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Q4fPOpLosBvmwOOlPFfYxbKk4s5Amij1tD2sCnsWTmU="
+          "Value": "sha256-24UpQeJQHucZpWJELhfefrlFWoB9IU0HL4GULlQQjhQ="
         }
       ]
     },
@@ -631,7 +631,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "215489"
+          "Value": "387257"
         },
         {
           "Name": "Content-Type",
@@ -639,11 +639,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Q4fPOpLosBvmwOOlPFfYxbKk4s5Amij1tD2sCnsWTmU=\""
+          "Value": "\"24UpQeJQHucZpWJELhfefrlFWoB9IU0HL4GULlQQjhQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 08 Jul 2025 10:13:51 GMT"
+          "Value": "Tue, 08 Jul 2025 16:15:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -653,7 +653,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Q4fPOpLosBvmwOOlPFfYxbKk4s5Amij1tD2sCnsWTmU="
+          "Value": "sha256-24UpQeJQHucZpWJELhfefrlFWoB9IU0HL4GULlQQjhQ="
         }
       ]
     },
