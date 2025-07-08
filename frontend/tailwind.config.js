@@ -70,6 +70,10 @@ export default {
         "letter-glow": "letterGlow 2s ease-in-out infinite alternate",
         "tooltip-bounce": "tooltipBounce 0.5s ease-out",
         shine: "shine 5s linear infinite",
+        "slide-in-right": "slideInRight 0.3s ease-out",
+        "slide-out-left": "slideOutLeft 0.3s ease-out",
+        "slide-in-left": "slideInLeft 0.3s ease-out",
+        "slide-out-right": "slideOutRight 0.3s ease-out",
       },
       keyframes: {
         fadeIn: {
@@ -104,6 +108,22 @@ export default {
         shine: {
           "0%": { backgroundPosition: "100%" },
           "100%": { backgroundPosition: "-100%" },
+        },
+        slideInRight: {
+          "0%": { transform: "translateX(100%)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        slideOutLeft: {
+          "0%": { transform: "translateX(0)", opacity: "1" },
+          "100%": { transform: "translateX(-100%)", opacity: "0" },
+        },
+        slideInLeft: {
+          "0%": { transform: "translateX(-100%)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        slideOutRight: {
+          "0%": { transform: "translateX(0)", opacity: "1" },
+          "100%": { transform: "translateX(100%)", opacity: "0" },
         },
       },
     },

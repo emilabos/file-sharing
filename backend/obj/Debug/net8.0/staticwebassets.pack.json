@@ -1,0 +1,53 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/emilabos/Github/file-sharing/backend/wwwroot/cursor.svg",
+      "PackagePath": "staticwebassets/cursor.svg"
+    },
+    {
+      "Id": "/Users/emilabos/Github/file-sharing/backend/wwwroot/graph-paper.svg",
+      "PackagePath": "staticwebassets/graph-paper.svg"
+    },
+    {
+      "Id": "/Users/emilabos/Github/file-sharing/backend/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/Users/emilabos/Github/file-sharing/backend/wwwroot/logo.svg",
+      "PackagePath": "staticwebassets/logo.svg"
+    },
+    {
+      "Id": "/Users/emilabos/Github/file-sharing/backend/wwwroot/sent.webm",
+      "PackagePath": "staticwebassets/sent.webm"
+    },
+    {
+      "Id": "/Users/emilabos/Github/file-sharing/backend/wwwroot/static/index-CQ65wKLO.js",
+      "PackagePath": "staticwebassets/static/index-CQ65wKLO.js"
+    },
+    {
+      "Id": "/Users/emilabos/Github/file-sharing/backend/wwwroot/static/index-X5der1V6.css",
+      "PackagePath": "staticwebassets/static/index-X5der1V6.css"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.backend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.backend.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.backend.props",
+      "PackagePath": "build\\backend.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.backend.props",
+      "PackagePath": "buildMultiTargeting\\backend.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.backend.props",
+      "PackagePath": "buildTransitive\\backend.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

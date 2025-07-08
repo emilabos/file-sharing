@@ -224,7 +224,7 @@ export const ReceiveModal: React.FC<ReceiveModalProps> = ({
             {/* File Info */}
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6">
               <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                File Retrieved Successfully!
+                File Retrieved
               </h3>
               <div className="space-y-2 text-sm text-gray-600">
                 <div>

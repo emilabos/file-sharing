@@ -29,6 +29,10 @@ if (app.Environment.IsDevelopment())
 
 // app.UseHttpsRedirection();
 
+app.UseDefaultFiles(); // Looks for index.html
+app.UseStaticFiles();
+app.MapFallbackToFile("index.html");
+
 app.UseCors();
 
 app.UseAuthorization();

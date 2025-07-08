@@ -238,9 +238,31 @@ export const ShareModal: React.FC<ShareModalProps> = ({
           /* Complete Section */
           <div className="text-center mb-8">
             <div className="mb-6">
-              <div className="w-12 h-12 bg-success-green rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckIcon className="w-6 h-6 text-white" />
-              </div>
+              <video
+                autoPlay
+                muted
+                loop={false}
+                className="w-16 h-26 mx-auto mb-4"
+                onLoadedData={(e) => {
+                  const video = e.target as HTMLVideoElement;
+                  video.currentTime = 0;
+                  video.playbackRate = 1.5;
+                  video.play();
+                }}
+                onTimeUpdate={(e) => {
+                  const video = e.target as HTMLVideoElement;
+                  if (video.currentTime >= 2.3) {
+                    video.pause();
+                    video.currentTime = 2.3;
+                  }
+                }}
+              >
+                <source src="/sent.webm" type="video/webm" />
+                {/* Fallback to the original green tick if video fails to load */}
+                <div className="w-12 h-12 bg-success-green rounded-full flex items-center justify-center mx-auto">
+                  <CheckIcon className="w-6 h-6 text-white" />
+                </div>
+              </video>
               <p className="text-gray-700 font-medium mb-2">
                 {shareProgress.message}
               </p>

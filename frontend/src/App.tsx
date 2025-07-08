@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { UploadModal } from "./components/UploadModal";
 import { ReceiveModal } from "./components/ReceiveModal";
 import { Hero } from "./components/Hero";

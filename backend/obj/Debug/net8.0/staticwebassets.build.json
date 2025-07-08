@@ -1,12 +1,743 @@
 {
   "Version": 1,
-  "Hash": "N7qxhc9M+1QNtfzJGqsi8ULkGFultmEzonbEq/EKgV4=",
+  "Hash": "fwx90pqA04Ai+8nhc+cTquJ04Rxu+nycPtmpNVtUa74=",
   "Source": "backend",
   "BasePath": "_content/backend",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "backend/wwwroot",
+      "Source": "backend",
+      "ContentRoot": "/Users/emilabos/Github/file-sharing/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/emilabos/Github/file-sharing/backend/wwwroot/cursor.svg",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/emilabos/Github/file-sharing/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "RelativePath": "cursor#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "21wd7g70j4",
+      "Integrity": "ZvpDR9OGd/ccVbD5f585TuONXqtnT3daPJ/3RE99H74=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/cursor.svg"
+    },
+    {
+      "Identity": "/Users/emilabos/Github/file-sharing/backend/wwwroot/graph-paper.svg",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/emilabos/Github/file-sharing/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "RelativePath": "graph-paper#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zwbokrcgdl",
+      "Integrity": "U/LaFYl0Netk4zgdFHcwlUo7PUQX4EzkRAVPNcyS2ns=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/graph-paper.svg"
+    },
+    {
+      "Identity": "/Users/emilabos/Github/file-sharing/backend/wwwroot/index.html",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/emilabos/Github/file-sharing/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1icok79z7o",
+      "Integrity": "SbVt75s5Fvhd5m4LTdNMaI+k4LSqmeAmHhsCzJ3r138=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/index.html"
+    },
+    {
+      "Identity": "/Users/emilabos/Github/file-sharing/backend/wwwroot/logo.svg",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/emilabos/Github/file-sharing/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "RelativePath": "logo#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tugdykv6uo",
+      "Integrity": "lTj8ObSrwmBZPtGdGZyXQVf2lEY0qYkzNyKw48sqpGM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/logo.svg"
+    },
+    {
+      "Identity": "/Users/emilabos/Github/file-sharing/backend/wwwroot/sent.webm",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/emilabos/Github/file-sharing/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "RelativePath": "sent#[.{fingerprint}]?.webm",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "lf05mhp4zp",
+      "Integrity": "jySLERqNxTKbuP0wAnzYHOeBevQbg72BHiOJFufKI0Q=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/sent.webm"
+    },
+    {
+      "Identity": "/Users/emilabos/Github/file-sharing/backend/wwwroot/static/index-CQ65wKLO.js",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/emilabos/Github/file-sharing/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "RelativePath": "static/index-CQ65wKLO#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "d85lzak3qd",
+      "Integrity": "Q4fPOpLosBvmwOOlPFfYxbKk4s5Amij1tD2sCnsWTmU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/static/index-CQ65wKLO.js"
+    },
+    {
+      "Identity": "/Users/emilabos/Github/file-sharing/backend/wwwroot/static/index-X5der1V6.css",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/emilabos/Github/file-sharing/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "RelativePath": "static/index-X5der1V6#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4gxd572i7n",
+      "Integrity": "bNTZf+MVpTa0KlN7IQ8jipbNFKdd7oYFpcv8+s6xgsE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/static/index-X5der1V6.css"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "cursor.21wd7g70j4.svg",
+      "AssetFile": "/Users/emilabos/Github/file-sharing/backend/wwwroot/cursor.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "515"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZvpDR9OGd/ccVbD5f585TuONXqtnT3daPJ/3RE99H74=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Jul 2025 10:13:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "21wd7g70j4"
+        },
+        {
+          "Name": "label",
+          "Value": "cursor.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZvpDR9OGd/ccVbD5f585TuONXqtnT3daPJ/3RE99H74="
+        }
+      ]
+    },
+    {
+      "Route": "cursor.svg",
+      "AssetFile": "/Users/emilabos/Github/file-sharing/backend/wwwroot/cursor.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "515"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZvpDR9OGd/ccVbD5f585TuONXqtnT3daPJ/3RE99H74=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Jul 2025 10:13:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZvpDR9OGd/ccVbD5f585TuONXqtnT3daPJ/3RE99H74="
+        }
+      ]
+    },
+    {
+      "Route": "graph-paper.svg",
+      "AssetFile": "/Users/emilabos/Github/file-sharing/backend/wwwroot/graph-paper.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1623"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"U/LaFYl0Netk4zgdFHcwlUo7PUQX4EzkRAVPNcyS2ns=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Jul 2025 10:13:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-U/LaFYl0Netk4zgdFHcwlUo7PUQX4EzkRAVPNcyS2ns="
+        }
+      ]
+    },
+    {
+      "Route": "graph-paper.zwbokrcgdl.svg",
+      "AssetFile": "/Users/emilabos/Github/file-sharing/backend/wwwroot/graph-paper.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1623"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"U/LaFYl0Netk4zgdFHcwlUo7PUQX4EzkRAVPNcyS2ns=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Jul 2025 10:13:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zwbokrcgdl"
+        },
+        {
+          "Name": "label",
+          "Value": "graph-paper.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-U/LaFYl0Netk4zgdFHcwlUo7PUQX4EzkRAVPNcyS2ns="
+        }
+      ]
+    },
+    {
+      "Route": "index.1icok79z7o.html",
+      "AssetFile": "/Users/emilabos/Github/file-sharing/backend/wwwroot/index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "508"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SbVt75s5Fvhd5m4LTdNMaI+k4LSqmeAmHhsCzJ3r138=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Jul 2025 10:13:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1icok79z7o"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SbVt75s5Fvhd5m4LTdNMaI+k4LSqmeAmHhsCzJ3r138="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "/Users/emilabos/Github/file-sharing/backend/wwwroot/index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "508"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SbVt75s5Fvhd5m4LTdNMaI+k4LSqmeAmHhsCzJ3r138=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Jul 2025 10:13:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SbVt75s5Fvhd5m4LTdNMaI+k4LSqmeAmHhsCzJ3r138="
+        }
+      ]
+    },
+    {
+      "Route": "logo.svg",
+      "AssetFile": "/Users/emilabos/Github/file-sharing/backend/wwwroot/logo.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1202"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lTj8ObSrwmBZPtGdGZyXQVf2lEY0qYkzNyKw48sqpGM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Jul 2025 10:13:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-lTj8ObSrwmBZPtGdGZyXQVf2lEY0qYkzNyKw48sqpGM="
+        }
+      ]
+    },
+    {
+      "Route": "logo.tugdykv6uo.svg",
+      "AssetFile": "/Users/emilabos/Github/file-sharing/backend/wwwroot/logo.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1202"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lTj8ObSrwmBZPtGdGZyXQVf2lEY0qYkzNyKw48sqpGM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Jul 2025 10:13:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tugdykv6uo"
+        },
+        {
+          "Name": "label",
+          "Value": "logo.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-lTj8ObSrwmBZPtGdGZyXQVf2lEY0qYkzNyKw48sqpGM="
+        }
+      ]
+    },
+    {
+      "Route": "sent.lf05mhp4zp.webm",
+      "AssetFile": "/Users/emilabos/Github/file-sharing/backend/wwwroot/sent.webm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "39399"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/webm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jySLERqNxTKbuP0wAnzYHOeBevQbg72BHiOJFufKI0Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Jul 2025 10:13:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lf05mhp4zp"
+        },
+        {
+          "Name": "label",
+          "Value": "sent.webm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-jySLERqNxTKbuP0wAnzYHOeBevQbg72BHiOJFufKI0Q="
+        }
+      ]
+    },
+    {
+      "Route": "sent.webm",
+      "AssetFile": "/Users/emilabos/Github/file-sharing/backend/wwwroot/sent.webm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "39399"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/webm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jySLERqNxTKbuP0wAnzYHOeBevQbg72BHiOJFufKI0Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Jul 2025 10:13:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-jySLERqNxTKbuP0wAnzYHOeBevQbg72BHiOJFufKI0Q="
+        }
+      ]
+    },
+    {
+      "Route": "static/index-CQ65wKLO.d85lzak3qd.js",
+      "AssetFile": "/Users/emilabos/Github/file-sharing/backend/wwwroot/static/index-CQ65wKLO.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "215489"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Q4fPOpLosBvmwOOlPFfYxbKk4s5Amij1tD2sCnsWTmU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Jul 2025 10:13:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "d85lzak3qd"
+        },
+        {
+          "Name": "label",
+          "Value": "static/index-CQ65wKLO.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Q4fPOpLosBvmwOOlPFfYxbKk4s5Amij1tD2sCnsWTmU="
+        }
+      ]
+    },
+    {
+      "Route": "static/index-CQ65wKLO.js",
+      "AssetFile": "/Users/emilabos/Github/file-sharing/backend/wwwroot/static/index-CQ65wKLO.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "215489"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Q4fPOpLosBvmwOOlPFfYxbKk4s5Amij1tD2sCnsWTmU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Jul 2025 10:13:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Q4fPOpLosBvmwOOlPFfYxbKk4s5Amij1tD2sCnsWTmU="
+        }
+      ]
+    },
+    {
+      "Route": "static/index-X5der1V6.4gxd572i7n.css",
+      "AssetFile": "/Users/emilabos/Github/file-sharing/backend/wwwroot/static/index-X5der1V6.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22604"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bNTZf+MVpTa0KlN7IQ8jipbNFKdd7oYFpcv8+s6xgsE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Jul 2025 10:13:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4gxd572i7n"
+        },
+        {
+          "Name": "label",
+          "Value": "static/index-X5der1V6.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-bNTZf+MVpTa0KlN7IQ8jipbNFKdd7oYFpcv8+s6xgsE="
+        }
+      ]
+    },
+    {
+      "Route": "static/index-X5der1V6.css",
+      "AssetFile": "/Users/emilabos/Github/file-sharing/backend/wwwroot/static/index-X5der1V6.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22604"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bNTZf+MVpTa0KlN7IQ8jipbNFKdd7oYFpcv8+s6xgsE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Jul 2025 10:13:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-bNTZf+MVpTa0KlN7IQ8jipbNFKdd7oYFpcv8+s6xgsE="
+        }
+      ]
+    }
+  ]
 }
