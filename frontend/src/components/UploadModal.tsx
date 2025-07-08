@@ -180,25 +180,8 @@ export const UploadModal: React.FC<UploadModalProps> = ({
   };
 
   const handleShareFile = async (file: FileData) => {
-    try {
-      const response = await fetch("http://localhost:5153/api/share", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name: file.name, blob: file.blob }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to share file");
-      }
-
-      const code = await response.text();
-      alert(`Your file has been shared! Code: ${code}`);
-    } catch (error) {
-      console.error(error);
-      alert("An error occurred while sharing the file.");
-    }
+    setFileToShare(file);
+    setIsShareModalOpen(true);
   };
 
   const handleShareModalClose = () => {

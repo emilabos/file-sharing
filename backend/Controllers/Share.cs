@@ -36,7 +36,6 @@ namespace backend.Controllers
 
                 datas.Add(data);
 
-                // Save all data to single JSON file
                 SaveDataToFile();
 
                 return Ok(new { code = data.Code });
@@ -57,10 +56,8 @@ namespace backend.Controllers
                     return BadRequest("Invalid code format. Code must be a 6-digit number.");
                 }
 
-                // Load data from file to ensure we have the latest data
                 LoadDataFromFile();
                 
-                // Check in-memory storage (now loaded from file)
                 var data = datas.FirstOrDefault(x => x.Code == request.Code);
 
                 if (data == null)
@@ -91,7 +88,6 @@ namespace backend.Controllers
             data.UploadTime = DateTime.Now;
             datas.Add(data);
 
-            // Save all data to single JSON file
             SaveDataToFile();
 
             return Ok(data.Code);
@@ -100,10 +96,8 @@ namespace backend.Controllers
         [HttpGet("{code:int}")]
         public IActionResult GetByCode(int code)
         {
-            // Load data from file to ensure we have the latest data
             LoadDataFromFile();
             
-            // Check in-memory storage (now loaded from file)
             dataModel? data = datas.FirstOrDefault(x => x.Code == code);
 
             if (data == null)
@@ -125,7 +119,6 @@ namespace backend.Controllers
                         datas.Clear();
                         datas.AddRange(loadedData);
                         
-                        // Update nextId to avoid conflicts
                         if (datas.Any())
                         {
                             nextId = datas.Max(x => x.Id) + 1;
@@ -135,7 +128,6 @@ namespace backend.Controllers
             }
             catch (Exception ex)
             {
-                // Log error but continue - will use in-memory storage
                 Console.WriteLine($"Error loading data from file: {ex.Message}");
             }
         }
@@ -149,14 +141,12 @@ namespace backend.Controllers
             }
             catch (Exception ex)
             {
-                // Log error but continue
                 Console.WriteLine($"Error saving data to file: {ex.Message}");
             }
         }
 
         private int GenerateCode()
         {
-            // Load data from file to ensure we have the latest data
             LoadDataFromFile();
             
             int code = 0;
@@ -168,7 +158,6 @@ namespace backend.Controllers
                 run = false;
                 code = R.Next(100000, 999999);
                 
-                // Check in-memory data
                 if (nums.Contains(code))
                 {
                     run = true;

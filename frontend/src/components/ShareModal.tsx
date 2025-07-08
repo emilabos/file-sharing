@@ -48,89 +48,118 @@ export const ShareModal: React.FC<ShareModalProps> = ({
       setShareLink("");
       setCopied(false);
 
-      // Start the sharing simulation
-      simulateSharing();
+      // Start the actual upload process
+      uploadFileToBackend();
     }
   }, [isOpen, file]);
 
-  const simulateSharing = () => {
-    const steps: ShareStep[] = [
-      "encrypting",
-      "uploading",
-      "generating",
-      "complete",
-    ];
-    let currentStepIndex = 0;
-    let progress = 0;
-    let totalProgress = 0;
+  const uploadFileToBackend = async () => {
+    if (!file) return;
 
-    // Each step takes up a portion of the total progress
-    const stepProgressRanges = {
-      encrypting: { start: 0, end: 30 },
-      uploading: { start: 30, end: 70 },
-      generating: { start: 70, end: 95 },
-      complete: { start: 95, end: 100 },
-    };
+    try {
+      // Step 1: Encrypting
+      setShareProgress({
+        step: "encrypting",
+        progress: 20,
+        message: shareSteps.encrypting,
+      });
 
-    const updateProgress = () => {
-      const currentStep = steps[currentStepIndex];
-      const stepRange = stepProgressRanges[currentStep];
-      const stepProgress = stepRange.end - stepRange.start;
+      // Convert blob to base64 (remove data URL prefix)
+      const base64Data = file.blob.split(",")[1];
 
-      // Increase progress within the current step's range (much faster)
-      progress += Math.random() * 8 + 5; // Random progress between 5-13% (much faster)
+      // Step 2: Uploading
+      setShareProgress({
+        step: "uploading",
+        progress: 50,
+        message: shareSteps.uploading,
+      });
 
-      // Calculate total progress based on current step and local progress
-      const stepCompletion = Math.min(progress, 100);
-      totalProgress = stepRange.start + (stepCompletion / 100) * stepProgress;
+      // Create the request payload
+      const uploadRequest = {
+        fileName: file.name,
+        fileType: getMimeType(file.name),
+        fileSize: getFileSizeInBytes(file.size),
+        fileBlob: base64Data,
+      };
 
-      if (progress >= 100) {
-        // Move to next step
-        currentStepIndex++;
-        progress = 0;
+      // Make the API call
+      const response = await fetch("http://localhost:5153/api/share/upload", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(uploadRequest),
+      });
 
-        if (currentStepIndex < steps.length) {
-          const nextStep = steps[currentStepIndex];
-
-          if (nextStep === "complete") {
-            // Generate the share link and set final progress
-            const shareCode = generateShareCode();
-            setShareLink(shareCode);
-            setShareProgress({
-              step: "complete",
-              progress: 100,
-              message: shareSteps.complete,
-            });
-          } else {
-            setShareProgress({
-              step: nextStep,
-              progress: Math.round(totalProgress),
-              message: shareSteps[nextStep],
-            });
-            setTimeout(updateProgress, 60 + Math.random() * 80); // Much faster intervals (60-140ms)
-          }
-        }
-      } else {
-        setShareProgress({
-          step: currentStep,
-          progress: Math.round(totalProgress),
-          message: shareSteps[currentStep],
-        });
-
-        // Continue progress for current step (much faster)
-        setTimeout(updateProgress, 60 + Math.random() * 80); // Much faster intervals (60-140ms)
+      if (!response.ok) {
+        throw new Error("Failed to upload file");
       }
-    };
 
-    updateProgress();
+      // Step 3: Generating
+      setShareProgress({
+        step: "generating",
+        progress: 80,
+        message: shareSteps.generating,
+      });
+
+      const result = await response.json();
+      const shareCode = result.code.toString();
+
+      // Step 4: Complete
+      setShareLink(shareCode);
+      setShareProgress({
+        step: "complete",
+        progress: 100,
+        message: shareSteps.complete,
+      });
+    } catch (error) {
+      console.error("Error uploading file:", error);
+      // Handle error - you might want to show an error state
+      alert("An error occurred while sharing the file. Please try again.");
+    }
   };
 
-  const generateShareCode = (): string => {
-    let result = "";
-    for (let i = 0; i < 6; i++) {
-      result += Math.floor(Math.random() * 10).toString();
+  // Helper function to get MIME type from file name
+  const getMimeType = (fileName: string): string => {
+    const extension = fileName.toLowerCase().split(".").pop();
+    const mimeTypes: { [key: string]: string } = {
+      jpg: "image/jpeg",
+      jpeg: "image/jpeg",
+      png: "image/png",
+      gif: "image/gif",
+      pdf: "application/pdf",
+      txt: "text/plain",
+      doc: "application/msword",
+      docx: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      xls: "application/vnd.ms-excel",
+      xlsx: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      ppt: "application/vnd.ms-powerpoint",
+      pptx: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      zip: "application/zip",
+      rar: "application/x-rar-compressed",
+      mp4: "video/mp4",
+      avi: "video/x-msvideo",
+      mov: "video/quicktime",
+    };
+    return mimeTypes[extension || ""] || "application/octet-stream";
+  };
+
+  // Helper function to convert formatted file size back to bytes
+  const getFileSizeInBytes = (formattedSize: string): number => {
+    const parts = formattedSize.split(" ");
+    const size = parseFloat(parts[0]);
+    const unit = parts[1];
+
+    switch (unit) {
+      case "KB":
+        return Math.round(size * 1024);
+      case "MB":
+        return Math.round(size * 1024 * 1024);
+      case "GB":
+        return Math.round(size * 1024 * 1024 * 1024);
+      default:
+        return Math.round(size);
     }
-    return result;
   };
 
   const copyToClipboard = async () => {

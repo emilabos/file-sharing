@@ -68,3 +68,4 @@ C:/AdatokPetie/Otthon/EmilProjekt/file-sharing/backend/backend/obj/Debug/net8.0/
 /Users/emilabos/Github/file-sharing/backend/obj/Debug/net8.0/backend.genruntimeconfig.cache
 /Users/emilabos/Github/file-sharing/backend/obj/Debug/net8.0/ref/backend.dll
 /Users/emilabos/Github/file-sharing/backend/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/emilabos/Github/file-sharing/backend/bin/Debug/net8.0/uploads.json
