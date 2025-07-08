@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using backend.Models;
+using Newtonsoft.Json;
 
 namespace backend.Controllers
 {
@@ -10,40 +11,170 @@ namespace backend.Controllers
         Random R = new Random();
         private static readonly List<dataModel> datas = new();
         private static int nextId = 1;
+        private static readonly string DataFilePath = "uploads.json";
 
-        [HttpPost]
+        [HttpPost("upload")]
+        public IActionResult UploadFile([FromBody] FileUploadRequest request)
+        {
+            try
+            {
+                if (request == null || string.IsNullOrEmpty(request.FileBlob))
+                {
+                    return BadRequest("Invalid file data");
+                }
+
+                var data = new dataModel
+                {
+                    Id = nextId++,
+                    Code = GenerateCode(),
+                    FileName = request.FileName,
+                    FileType = request.FileType,
+                    FileSize = request.FileSize,
+                    FileBlob = request.FileBlob,
+                    UploadTime = DateTime.Now
+                };
+
+                datas.Add(data);
+
+                // Save all data to single JSON file
+                SaveDataToFile();
+
+                return Ok(new { code = data.Code });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error uploading file: {ex.Message}");
+            }
+        }
+
+        [HttpPost("retrieve")]
+        public IActionResult RetrieveFile([FromBody] FileRetrieveRequest request)
+        {
+            try
+            {
+                if (request == null || request.Code < 100000 || request.Code > 999999)
+                {
+                    return BadRequest("Invalid code format. Code must be a 6-digit number.");
+                }
+
+                // Load data from file to ensure we have the latest data
+                LoadDataFromFile();
+                
+                // Check in-memory storage (now loaded from file)
+                var data = datas.FirstOrDefault(x => x.Code == request.Code);
+
+                if (data == null)
+                {
+                    return NotFound("File not found with the provided code");
+                }
+
+                return Ok(new
+                {
+                    fileName = data.FileName,
+                    fileType = data.FileType,
+                    fileSize = data.FileSize,
+                    fileBlob = data.FileBlob,
+                    uploadTime = data.UploadTime
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error retrieving file: {ex.Message}");
+            }
+        }
+
+        [HttpPost("legacy")]
         public IActionResult Add([FromBody] dataModel data)
         {
             data.Id = nextId++;
-            data.Code = generateCode();
+            data.Code = GenerateCode();
+            data.UploadTime = DateTime.Now;
             datas.Add(data);
+
+            // Save all data to single JSON file
+            SaveDataToFile();
+
             return Ok(data.Code);
         }
 
-        [HttpGet("{code}")]
+        [HttpGet("{code:int}")]
         public IActionResult GetByCode(int code)
         {
-            dataModel data = datas.FirstOrDefault(x => x.Code == code);
+            // Load data from file to ensure we have the latest data
+            LoadDataFromFile();
+            
+            // Check in-memory storage (now loaded from file)
+            dataModel? data = datas.FirstOrDefault(x => x.Code == code);
+
             if (data == null)
                 return NotFound();
 
             return Ok(data);
         }
 
-        public int GenerateCode()
+        private void LoadDataFromFile()
         {
+            try
+            {
+                if (System.IO.File.Exists(DataFilePath))
+                {
+                    var fileContent = System.IO.File.ReadAllText(DataFilePath);
+                    var loadedData = JsonConvert.DeserializeObject<List<dataModel>>(fileContent);
+                    if (loadedData != null)
+                    {
+                        datas.Clear();
+                        datas.AddRange(loadedData);
+                        
+                        // Update nextId to avoid conflicts
+                        if (datas.Any())
+                        {
+                            nextId = datas.Max(x => x.Id) + 1;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log error but continue - will use in-memory storage
+                Console.WriteLine($"Error loading data from file: {ex.Message}");
+            }
+        }
+
+        private void SaveDataToFile()
+        {
+            try
+            {
+                var json = JsonConvert.SerializeObject(datas, Formatting.Indented);
+                System.IO.File.WriteAllText(DataFilePath, json);
+            }
+            catch (Exception ex)
+            {
+                // Log error but continue
+                Console.WriteLine($"Error saving data to file: {ex.Message}");
+            }
+        }
+
+        private int GenerateCode()
+        {
+            // Load data from file to ensure we have the latest data
+            LoadDataFromFile();
+            
             int code = 0;
             bool run = true;
             int[] nums = datas.Select(x => x.Code).ToArray();
+            
             while (run)
             {
                 run = false;
                 code = R.Next(100000, 999999);
-                Array.ForEach(nums, x =>
+                
+                // Check in-memory data
+                if (nums.Contains(code))
                 {
-                    if (x == code) run = true;
-                });
+                    run = true;
+                }
             }
+            
             return code;
         }
     }

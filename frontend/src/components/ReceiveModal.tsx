@@ -40,11 +40,30 @@ export const ReceiveModal: React.FC<ReceiveModalProps> = ({
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would implement the logic to fetch the file
-    // For now, just log the code
-    console.log("Attempting to receive file with code:", code.join(""));
+    const shareCode = code.join("");
+
+    try {
+      const response = await fetch(`/api/share/${shareCode}`);
+      if (!response.ok) {
+        throw new Error("Failed to fetch file");
+      }
+
+      const { fileBlob, data } = await response.json();
+      const blob = new Blob([fileBlob], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `${data.name}`;
+      link.click();
+
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred while receiving the file.");
+    }
   };
 
   if (!isOpen) return null;

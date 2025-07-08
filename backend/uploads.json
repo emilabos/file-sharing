@@ -1,0 +1,11 @@
+[
+  {
+    "Id": 1,
+    "Code": 162100,
+    "FileName": "test.txt",
+    "FileType": "text/plain",
+    "FileSize": 13,
+    "FileBlob": "SGVsbG8gV29ybGQh",
+    "UploadTime": "2025-07-08T09:38:00.416944+01:00"
+  }
+]

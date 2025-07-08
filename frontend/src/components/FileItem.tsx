@@ -31,6 +31,7 @@ export interface FileData {
     | "other";
   status: "uploading" | "success" | "error";
   progress?: number;
+  blob: string;
 }
 
 interface FileItemProps {

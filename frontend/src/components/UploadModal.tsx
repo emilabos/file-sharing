@@ -120,19 +120,22 @@ export const UploadModal: React.FC<UploadModalProps> = ({
       return;
     }
 
-    const newFile: FileData = {
-      id: `${Date.now()}-${Math.random()}`,
-      name: file.name,
-      size: formatFileSize(file.size),
-      type: getFileType(file.name),
-      status: "uploading" as const,
-      progress: 0,
+    const reader = new FileReader();
+    reader.onload = () => {
+      const newFile: FileData = {
+        id: `${Date.now()}-${Math.random()}`,
+        name: file.name,
+        size: formatFileSize(file.size),
+        type: getFileType(file.name),
+        status: "uploading" as const,
+        progress: 0,
+        blob: reader.result as string,
+      };
+
+      setFiles([newFile]);
+      simulateUpload(newFile.id);
     };
-
-    setFiles([newFile]);
-
-    // Simulate upload progress
-    simulateUpload(newFile.id);
+    reader.readAsDataURL(file);
   };
 
   const simulateUpload = (fileId: string) => {
@@ -176,9 +179,26 @@ export const UploadModal: React.FC<UploadModalProps> = ({
     setError("");
   };
 
-  const handleShareFile = (file: FileData) => {
-    setFileToShare(file);
-    setIsShareModalOpen(true);
+  const handleShareFile = async (file: FileData) => {
+    try {
+      const response = await fetch("http://localhost:5153/api/share", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name: file.name, blob: file.blob }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to share file");
+      }
+
+      const code = await response.text();
+      alert(`Your file has been shared! Code: ${code}`);
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred while sharing the file.");
+    }
   };
 
   const handleShareModalClose = () => {

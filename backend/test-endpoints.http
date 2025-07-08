@@ -1,0 +1,35 @@
+### Test Upload Endpoint - Stores to single uploads.json file
+POST http://localhost:5153/api/share/upload
+Content-Type: application/json
+
+{
+  "fileName": "test.txt",
+  "fileType": "text/plain",
+  "fileSize": 13,
+  "fileBlob": "SGVsbG8gV29ybGQh"
+}
+
+###
+
+### Test Retrieve Endpoint
+POST http://localhost:5153/api/share/retrieve
+Content-Type: application/json
+
+{
+  "code": 162100
+}
+
+###
+
+### Legacy Test Upload
+POST http://localhost:5153/api/share/legacy
+Content-Type: application/json
+
+{
+  "data": "test data"
+}
+
+###
+
+### Legacy Test Get
+GET http://localhost:5153/api/share/323021
